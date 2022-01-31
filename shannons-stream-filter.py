@@ -37,10 +37,10 @@ def estimate_shannon_entropy(dna_sequence):
 		c=0
 		g=0
 	else:
-		a=float(seq.count("A")/(len(seq))) #-seq.count("N")
-		t=float(seq.count("T")/(len(seq)))
-		c=float(seq.count("C")/(len(seq)))
-		g=float(seq.count("G")/(len(seq)))
+		a=float(seq.count("A")/(len(seq)-seq.count("N")))
+		t=float(seq.count("T")/(len(seq)-seq.count("N")))
+		c=float(seq.count("C")/(len(seq)-seq.count("N")))
+		g=float(seq.count("G")/(len(seq)-seq.count("N")))
 	
 	if a!=0:
 		a1=a * math.log(a,4)
